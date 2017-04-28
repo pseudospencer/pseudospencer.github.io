@@ -31,6 +31,7 @@ var helvetica = "Helvetica";
 
 function setup(){
     canvas = createCanvas(windowWidth, windowHeight);
+    canvas.parent("sketch-holder")
     textFont(helvetica);
     newGame();
 }
