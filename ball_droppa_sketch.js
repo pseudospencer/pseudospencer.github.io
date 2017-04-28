@@ -5,6 +5,7 @@ Spencer James, 2017
 
 var DEBUGGING = true;
 // Setup
+var canvas;
 var level = 1;
 var lives = 3;
 var maxLevels = 11; // goes to 10
@@ -29,7 +30,7 @@ var baseText = 18;
 var helvetica = "Helvetica";
 
 function setup(){
-    createCanvas(windowWidth, windowHeight);
+    canvas = createCanvas(windowWidth, windowHeight);
     textFont(helvetica);
     newGame();
 }
