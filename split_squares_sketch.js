@@ -4,7 +4,6 @@ var canvas;
 var array = [];
 
 function setup() {
-    // createCanvas(600, 600);
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent("sketch-holder");
     strokeWeight(2);
