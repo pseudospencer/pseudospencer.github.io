@@ -1,10 +1,12 @@
 // var DEBUGGING = true;
 var DEBUGGING = false;
+var canvas;
 var array = [];
 
 function setup() {
     // createCanvas(600, 600);
-    createCanvas(windowWidth-20, windowHeight-20);
+    canvas = createCanvas(windowWidth-20, windowHeight-20);
+    canvas.parent("sketch-holder")
     strokeWeight(2);
     array[0] = new Square(0, 0, width, height);
 }
