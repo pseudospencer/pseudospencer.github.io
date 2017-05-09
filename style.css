@@ -1,8 +1,16 @@
 body {
-    margin: 0;
-    padding: 0;
+
 }
 
-canvas {
-    display: block;
+#sketch-holder {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#sketch-holder canvas {
+    width: 100%: !important;
+    height: auto !important;
 }
