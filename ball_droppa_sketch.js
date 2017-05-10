@@ -30,7 +30,7 @@ var baseText = 18;
 var helvetica = "Helvetica";
 
 function setup(){
-    canvas = createCanvas(windowWidth, windowHeight);
+    canvas = createCanvas(1000, 700);
     canvas.parent("sketch-holder");
     textFont(helvetica);
     newGame();
