@@ -29,7 +29,7 @@ function setup() {
     div = createDiv("");
     div.style("background-image", "url( 'https://c1.staticflickr.com/9/8290/7601842990_163aa1d4ee_b.jpg')");
     div.style("background-size", "contain");
-    div.size(450, 550);
+    div.size(450, 540);
 
     div.style("font-family",'Permanent Marker');
     greeting = createElement("h2", "Happy Birthday! Enjoy your cake!");
