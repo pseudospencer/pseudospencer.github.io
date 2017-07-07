@@ -12,6 +12,7 @@ function setup() {
     pixelDensity(1); // correct for Retina display
     video = createCapture(VIDEO);
     video.size(width/vScale,height/vScale);
+    video.hide();
 }
 
 function draw() {
