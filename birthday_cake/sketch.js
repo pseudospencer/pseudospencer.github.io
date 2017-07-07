@@ -229,8 +229,9 @@ function Layer(index) {
                 } else if (this.index == 0) {
                     this.radius = sin(frameCount * 0.01) * 100;
                 }
+            } else if (!this.effect4) {
+                this.radius = 50 + 20 * this.index;
             }
-            tint(this.r, this.g, this.b);
             cylinder(this.radius, this.height);
         pop();
         push();
@@ -315,11 +316,21 @@ function newCake() {
 
 function effect1() {
     frosting.effect1 = !frosting.effect1;
+    if (frosting.effect1) {
+        effect1Btn.style("background-color", "#abc6f2");
+    } else {
+        effect1Btn.style("background-color", "");
+    }
 }
 
 function effect2() {
     for (var i = 0; i< sprinkles.length; i++) {
         sprinkles[i].effect2 = !sprinkles[i].effect2;
+    }
+    if (sprinkles[0].effect2) {
+        effect2Btn.style("background-color", "#abc6f2");
+    } else {
+        effect2Btn.style("background-color", "");
     }
 }
 
@@ -327,10 +338,20 @@ function effect3() {
     for (var i = 0; i< layers.length; i++) {
         layers[i].effect3 = !layers[i].effect3;
     }
+    if (layers[0].effect3) {
+        effect3Btn.style("background-color", "#abc6f2");
+    } else {
+        effect3Btn.style("background-color", "");
+    }
 }
 
 function effect4() {
     for (var i = 0; i< layers.length; i++) {
         layers[i].effect4 = !layers[i].effect4
+    }
+    if (layers[0].effect4) {
+        effect4Btn.style("background-color", "#abc6f2");
+    } else {
+        effect4Btn.style("background-color", "");
     }
 }
