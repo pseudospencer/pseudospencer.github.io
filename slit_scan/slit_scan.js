@@ -4,6 +4,7 @@ var img;
 var draw_position_x = 0;
 
 function preload() {
+    // Fixed this line
     img = loadImage("Bean_Head_Crop_250.jpg")
 }
 
