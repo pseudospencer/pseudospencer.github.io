@@ -4,7 +4,7 @@ var img;
 var draw_position_x = 0;
 
 function preload() {
-    img = loadImage("Bean Head Crop 250.jpg")
+    img = loadImage("Bean_Head_Crop_250.jpg")
 }
 
 function setup() {
