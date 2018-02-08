@@ -23,6 +23,7 @@ function draw() {
 
     for (var y = 0; y < video.height; y++){
         for (var x = 0; x < video.width; x++){
+            // The math in this line flips the way the video is rendered to mirror
             var r = (video.width - x -1 + (y * video.width)) * 4;
             var g = r + 1;
             var b = r + 2;
