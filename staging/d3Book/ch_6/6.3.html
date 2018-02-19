@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Practice Exercise</title>
+
+        <!-- Load D3 -->
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <!-- CSS -->
+        <style>
+            /*Style goes here*/
+        </style>
+    </head>
+    <body>
+
+        <!-- D3 code -->
+        <script type="text/javascript">
+            var dataset = [ 5, 10, 15, 20, 25 ];
+            var chartW = 500;
+            var chartH = 100;
+
+            chart = d3.select("body")
+                .append("svg")
+                .attr("width", chartW)
+                .attr("height", chartH);
+
+            circles = chart.selectAll("circle")
+                .data(dataset)
+                .enter()
+                .append("circle")
+                .attr("cx", function(d, i) {
+                    return (i*50) +25;
+                })
+                .attr("cy", chartH/2)
+                .attr("r", function(d) {
+                    return d;
+                })
+                .attr("fill", "yellow")
+                .attr("stroke", "orange")
+                .attr("stroke-width", function(d) {
+                    return d/2;
+                })
+                ;
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <!--
+    Step 1: Create a short video and add to program
+
+    First, Record a short selfie video and send it to yourself (~1 sec is a good length)
+    Then, open in QuickTime and "export for iPad, iPhone..." using lowest export quality. Save that file in the /video directory as "me.mv4"
+    Finally, open me.mv4 in QuickTime and this time "export audio only". Save that file as me.m4a in the /audio directory
+
+    -> your short loop is in the program
+
+    Note: A-frame doesn't support 3D audio for <a-video> objects, so to get around this, we mute the video and create a video container with attached audio. 3D Audio works for regular entities. 
+
+    -->
+
+
+    <!-- Begin A-frame scene -->
+    <a-scene>
+
+        <!-- Load Assets -->
+        <a-assets>
+            <!-- Video Asset, muted -->
+            <video id="me-video" autoplay loop="true" src="/video/me.m4v" muted></video>
+            <!-- Audio for video -->
+            <audio id="me-audio" loop="true" src="/audio/me.m4a"></audio>
+        </a-assets>
+
+        <!-- Container Entity -->
+        <a-entity rotation="270 0 0" position="0 2 -45">
+
+            <!-- Video container entity with audio applied -->
+            <a-entity id="video-container1" sound="src: #me-audio; loop: true;" position="0 -30 0">
+                <!-- Video object, kinda like a plane -->
+                <a-video src="#me-video" width="16" height="16" position="0 0 2" rotation="90 90 0"></a-video>
+
+            </a-entity>
+
+        </a-entity>
+        <!-- End container -->
+
+        <!-- Point Light -->
+        <a-entity light="type: point; castShadow: true;" position="0.051 1 0.628"></a-entity>
+
+        <!-- Camera -->
+        <a-entity camera="userHeight: 1" position="0 1 2" look-controls></a-entity>
+
+    </a-scene>
+    <!-- End Scene -->
+
+    <!--
+    Script:
+    - Detects if you're viewing with an iOS device
+    - If so, plays the audio immediately
+    - If not, plays the audio just the same
+     -->
+    <script type="text/javascript">
+        document.querySelector('a-scene').addEventListener('loaded', function() {
+            let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            if (iOS) {
+                function startAudio() {
+                    let entity = document.querySelector('#video-container1');
+                    entity.components.sound.playSound();
+                }
+                document.body.addEventListener('click', startAudio);
+            } else {
+                let entity = document.querySelector('#video-container1');
+                entity.components.sound.playSound();
+            }
+        })
+    </script>
+
+</body>
+
+</html>

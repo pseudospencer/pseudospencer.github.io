@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <!-- Include A-Frame -->
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <!--
+        Step 3: Add an animation to the box.
+
+        By nesting the animation within the box entity, the animation will be applied to the box.
+
+        Rotation only up to 359.999 degrees so that there is no stutter - 0 & 360 are the same.
+    -->
+
+    <!-- A-frame scene -->
+    <a-scene>
+
+        <!-- Box -->
+        <a-entity geometry="primitive:box;" position="0 1 0" material="color: red;">
+
+            <!-- Animation - Rotate completely along the Y axis every 4 seconds, repeating forever. -->
+            <a-animation attribute="rotation" dur="4000" to="0 359.999 0" repeat="indefinite" easing="linear"></a-animation>
+
+        </a-entity>
+
+        <!-- Plane -->
+        <a-entity geometry="primitive: plane; width: 10; height: 10;" rotation="270 0 0" material="color: blue;"></a-entity>
+
+        <!-- Camera -->
+        <a-entity camera="userHeight: 3;" position="0 0 4" look-controls></a-entity>
+
+    </a-scene>
+    <!-- End A-frame scene -->
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <!--
+    Step 2: Add a nested animation to the box + sound for 3D audio effects
+
+    First, change the origin of the box
+    Then, add an animation so that the box moves back and forth
+    Nest the animation within the box to apply it
+
+    -> 3D sound that follows box!
+
+    -->
+
+    <!-- Begin Scene  - Shadow and antialiasing on-->
+    <a-scene shadow antialiasing>
+
+        <!-- Load Assets -->
+        <a-assets>
+            <!-- Sound File -->
+            <audio id="sample-audio" loop="true" src="/audio/sample.mp3"></audio>
+
+        </a-assets>
+
+        <!-- Box, now with new starting position (-40, 1.5 0) -->
+        <a-entity id="my-box" sound="src: /audio/sample.mp3; loop: true;" geometry="primitive: box;" position="-40 1.5 0" shadow="cast: true;" material="color: red;">
+
+            <!-- Animation - move box from -40 to 40 and back over a period of 5 seconds, repeating forever -->
+            <a-animation attribute="position" dur="5000" to="40 1.5 0" direction="alternate" repeat="indefinite"></a-animation>
+
+        </a-entity>
+
+        <!-- Plane -->
+        <a-entity geometry="primitive: plane; width: 100; height: 100;" rotation="270 0 0" shadow="receive: true;" material="color: blue;"></a-entity>
+
+        <!-- Point light  -->
+        <a-entity light="type: point; castShadow: true" position="0 6 0"></a-entity>
+
+        <!-- Ambient light -->
+        <a-entity light="type: ambient; intensity: .2"></a-entity>
+
+        <!-- Camera -->
+        <a-entity camera="userHeight: 3;" position="0 0 4" look-controls></a-entity>
+
+    </a-scene>
+
+    <!--
+    Script:
+    - Detects if you're viewing with an iOS device
+    - If so, plays the audio immediately
+    - If not, plays the audio just the same
+     -->
+    <script type="text/javascript">
+        document.querySelector('a-scene').addEventListener('loaded', function() {
+            let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            if (iOS) {
+                function startAudio() {
+                    let entity = document.querySelector('#my-box');
+                    entity.components.sound.playSound();
+                    document.body.removeEventListener('click', startAudio);
+                }
+                document.body.addEventListener('click', startAudio);
+            } else {
+                let entity = document.querySelector('#my-box');
+                entity.components.sound.playSound();
+            }
+        })
+    </script>
+
+</body>
+
+</html>

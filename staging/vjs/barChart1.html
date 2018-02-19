@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Based on this tutorial: https://bost.ocks.org/mike/bar/ -->
+    <meta charset="utf-8">
+    <title>Visual Job Search D3</title>
+    <link rel="stylesheet" type="text/css" href="vjs_style.css">
+</head>
+
+<body>
+    <!--  Chart goes in here  -->
+    <div class="chart1"></div>
+
+    <!-- Load D3 -->
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!-- Script for chart 1 -->
+    <script>
+        var data = [4, 8, 15, 16, 23, 42];
+
+        var x = d3.scale.linear()
+            .domain([0, d3.max(data)])
+            .range([0, 420]);
+
+        d3.select(".chart1")
+            .selectAll("div")
+            .data(data)
+            .enter().append("div")
+            .style("width", function(d) {
+                return x(d) + "px";
+            })
+            .text(function(d) {
+                return d;
+            });
+    </script>
+</body>
+
+</html>

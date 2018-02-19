@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <!-- Include A-frame -->
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <!--
+
+    Step 4: Add some lights.
+
+    Here we're adding a point light and an ambient light.
+    - The point light works like a light bulb, emanating light from a specific position.
+    - The ambient light applies to everything in the scene.
+
+    -->
+
+    <!-- A-frame scene -->
+    <a-scene>
+
+        <!-- Box -->
+        <a-entity geometry="primitive:box;" position="0 1 0" material="color: red;">
+
+            <!-- Animation -->
+            <a-animation attribute="rotation" dur="4000" to="0 359.999 0" repeat="indefinite" easing="linear"></a-animation>
+
+        </a-entity>
+
+        <!-- Plane -->
+        <a-entity geometry="primitive: plane; width: 10; height: 10;" rotation="270 0 0" material="color: blue;"></a-entity>
+
+        <!-- ***Adding a point light*** -->
+        <a-entity light="type: point;" position="3 6 5"></a-entity>
+
+        <!-- ***Adding ambient light*** -->
+        <a-entity light="type: ambient; intensity: .2"></a-entity>
+
+        <!-- Camera -->
+        <a-entity camera="userHeight: 3;" position="0 0 4" look-controls></a-entity>
+
+    </a-scene>
+    <!-- End A-frame scene -->
+
+</body>
+
+</html>

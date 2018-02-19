@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <!--
+    Step 7: Load a panoramic image and apply that to the scene
+
+    First we have to load the image by creating an a-assets item
+    - This has to be inside of a-scene
+    - Load the image with an img tag
+    - apply an id to the img ("sky") so that we can reference it
+
+    Next, add an a-sky element to the scene
+    - The sky primitive adds a background color or 360° image to a scene
+    - reference the #sky img
+
+    -->
+
+    <!-- A-frame scene -->
+    <a-scene shadows>
+
+        <!-- Load A-frame assets -->
+        <a-assets>
+
+            <!-- Panoramic sky image -->
+            <img id="sky" src="/images/panorama.jpg">
+
+        </a-assets>
+
+        <!-- Create a sky element, load in #sky image -->
+        <a-sky src="#sky"></a-sky>
+
+        <!-- Box -->
+        <a-entity geometry="primitive:box;" position="0 1 0" material="color: red;" shadow="cast: true;">
+
+            <!-- Cylinder -->
+            <a-entity geometry="primitive: cylinder;" position="1 1 1" rotation="45 45 45" scale=".3 .3 .3" material="color: purple;" shadow="cast: true;"></a-entity>
+
+            <!-- Torus -->
+            <a-entity geometry="primitive: torus;" position="-1 1 1" rotation="90 45 45" scale=".3 .3 .3" material="color: orange;" shadow="cast: true;"></a-entity>
+
+            <!-- Animation -->
+            <a-animation attribute="rotation" dur="4000" to="0 359.999 0" repeat="indefinite" easing="linear"></a-animation>
+
+        </a-entity>
+
+        <!-- Plane -->
+        <a-entity geometry="primitive: plane; width: 10; height: 10;" rotation="270 0 0" shadow="receive: true;" material="color: blue;"></a-entity>
+
+        <!-- Point Light -->
+        <a-entity light="type: point; castShadow: true" position="3 6 5"></a-entity>
+
+        <!-- Ambient light -->
+        <a-entity light="type: ambient; intensity: .2"></a-entity>
+
+        <!-- Camera -->
+        <a-entity camera="userHeight: 3;" position="0 0 4" look-controls></a-entity>
+
+    </a-scene>
+    <!-- End Scene -->
+
+</body>
+
+</html>

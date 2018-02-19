@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+     <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene shadow antialiasing>
+
+      <a-entity environment="preset: osiris; seed: 12; skyType: gradient; skyColor: #1c6615; horizonColor: #1e44dd; dressingColor: #06bc00; dressingScale: 7"></a-entity>
+
+      <a-entity light="type: ambient; intensity: .2" ></a-entity>
+
+      <a-entity camera="userHeight: 1" position="0 1 -3" rotation="0 180 0" look-controls></a-entity>
+
+    </a-scene>
+
+  </body>
+</html>

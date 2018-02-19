@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- A-frame -->
+        <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+        <!-- A-frame Environment -->
+        <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+
+            <a-assets>
+                <!-- Goat -->
+                <a-asset-item id="goat-obj" src="/models/goat.obj"></a-asset-item>
+                <!-- Wolf -->
+                <a-asset-item id="rat-obj" src="/models/rat.obj"></a-asset-item>
+                <!-- Rat -->
+                <a-asset-item id="wolf-obj" src="/models/wolf.obj"></a-asset-item>
+                <!-- Prince's "When Doves Cry" -->
+                <audio id="when-doves-cry" loop="true" src="/audio/when_doves_cry.mp3"></audio>
+            </a-assets>
+
+            <!-- ENVIRONMENT - kind of a vaporwave mushroom land-->
+            <a-entity environment="preset: tron; skyColor: #9e15f3; horizonColor: #21fc64; shadow: true; fog: 0.21; ground: noise; groundYScale: 10; groundColor: #2714b8; dressing: mushrooms; dressingColor: #fd8d70; dressingVariance: 18 5 20; gridColor: #e22c88" id="environment"></a-entity>
+
+            <!-- Audio Container -->
+            <a-entity id="prince-player" sound="src: #when-doves-cry; loop: true;" soundplaybackrate="1"></a-entity>
+
+            <!-- A goat -->
+            <!-- <a-entity id="goat1" obj-model="obj: #goat-obj;" material="color: pink;" position=" 0 1 4" scale=".002 .002 .002" rotation="0 0 0">
+
+                <a-animation attribute="rotation" dur="1000" repeat="indefinite" direction="alternate" to="0 0 90"></a-animation>
+
+                <a-animation attribute="position" dur="1000" repeat="indefinite" direction="alternate" to="0 5 4" delay="100"></a-animation>
+
+            </a-entity> -->
+
+            <!-- A rat -->
+            <!-- <a-entity id="rat1" obj-model="obj: #rat-obj;" material="color: purple;" position=" 3 1 4" scale=".02 .02 .02" rotation="0 0 0"></a-entity> -->
+
+            <!-- A wolf -->
+            <!-- <a-entity id="wolf1" obj-model="obj: #wolf-obj;" material="color: green;" position=" -3 1 4" scale=".002 .002 .002" rotation="0 0 0"></a-entity> -->
+
+            <!-- Camera -->
+            <a-entity camera="userHeight: 1" position="0 1 0" rotation="0 180 0" look-controls wasd-controls></a-entity>
+
+            <!-- Ambient light -->
+            <a-entity light="type: ambient; intensity: .2"></a-entity>
+
+        </a-scene>
+
+        <!-- Script to play sound automatically -->
+        <script type="text/javascript">
+            let scene = document.querySelector('a-scene');
+
+            function createGoat(x, y, z) {
+                let goat = document.createElement("a-entity");
+                goat.setAttribute('obj-model', "obj", "#goat-obj");
+                goat.setAttribute("material", "color: pink;");
+                goat.setAttribute("position", `${x} ${y} ${z}`);
+                goat.setAttribute("scale", ".002 .002 .002");
+
+                scene.appendChild(goat);
+                return goat;
+            }
+
+            function createWolf(x, y, z) {
+                let wolf = document.createElement("a-entity");
+                    wolf.setAttribute("obj-model", "obj", "#wolf-obj");
+                    wolf.setAttribute("position", `${x} ${y} ${z}`);
+                    wolf.setAttribute("scale", ".002 .002 .002");
+                    wolf.setAttribute("material", "color: green;");
+
+                scene.appendChild(wolf);
+                return wolf;
+            }
+
+            function createRat(x, y, z) {
+                let rat = document.createElement("a-entity");
+                    rat.setAttribute("obj-model", "obj", "#rat-obj");
+                    rat.setAttribute("scale", ".02 .02 .02");
+                    rat.setAttribute("position", `${x} ${y} ${z}`);
+                    rat.setAttribute("material", "color: gold;");
+
+                scene.appendChild(rat);
+                return rat;
+            }
+
+            function addRotateAnimation(eleToAnimate) {
+                let animation = document.createElement("a-animation");
+
+                animation.setAttribute("attribute", "rotation");
+                animation.setAttribute("dur", "1000");
+                animation.setAttribute("repeat", "indefinite");
+                animation.setAttribute('direction', "alternate");
+                animation.setAttribute("to", "0 0 90");
+
+                eleToAnimate.appendChild(animation);
+
+            }
+
+            function addJumpAnimation(eleToAnimate) {
+                let animation = document.createElement("a-animation");
+                    animation.setAttribute("attribute", "position");
+                    animation.setAttribute("dur", "1000");
+                    animation.setAttribute("repeat", "indefinite");
+                    animation.setAttribute('direction', "alternate");
+                    animation.setAttribute("to", "0 5 4");
+                    animation.setAttribute("delay", "100");
+
+                eleToAnimate.appendChild(animation);
+            }
+
+
+            let rats = [];
+
+            for (let i = 0; i< 12; i++) {
+                rats[i] = createRat(3, 1.5 * i, 4);
+                addRotateAnimation(rats[i]);
+
+            }
+
+
+            // Autoplay Music
+            document.querySelector('a-scene').addEventListener('loaded', function() {
+                let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                if (iOS) {
+                    function startAudio() {
+                        let entity = document.querySelector('#prince-player');
+                        entity.components.sound.playSound();
+
+                        document.body.removeEventListener('click', startAudio);
+                    }
+                    document.body.addEventListener('click', startAudio);
+                } else {
+                    let entity = document.querySelector('#prince-player');
+                    entity.components.sound.playSound();
+                }
+            })
+        </script>
+    </body>
+</html>

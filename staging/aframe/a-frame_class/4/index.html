@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <!-- Include A-frame -->
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <!-- Include Environment component -->
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+</head>
+
+<body>
+    <!-- Begin Scene -->
+    <a-scene shadow antialiasing>
+
+        <!-- Enviroment -->
+        <a-entity environment=""></a-entity>
+
+        <!-- Ambient Light -->
+        <a-entity light="type: ambient; intensity: .2"></a-entity>
+
+        <!-- Camera -->
+        <a-entity camera="userHeight: 1" position="0 1 -3" rotation="0 180 0" look-controls></a-entity>
+
+    </a-scene>
+    <!-- End Scene -->
+
+</body>
+
+</html>
