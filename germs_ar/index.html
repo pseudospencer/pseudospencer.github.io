@@ -12,10 +12,11 @@
     <body style="margin: 0px; overflow: hidden;">
         <!-- initialize ar.js in scene-->
         <a-scene embedded arjs>
-            <!-- plane -->
-            <a-entity geometry="primitive: plane; width; 10; height: 10" material="color:blue;"></a-entity>
+
             <!-- define camera that moves according to marker position -->
-            <a-marker-camera preset="hiro"></a-marker-camera>
+            <a-marker-camera preset="hiro">
+                <a-entity geometry="primitive: plane; width; 1; height: 1" material="color:blue;"></a-entity>
+            </a-marker-camera>
         </a-scene>
     </body>
 </html>
