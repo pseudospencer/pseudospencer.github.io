@@ -29,6 +29,15 @@
 
             let s1 = createSars(-2, 1, 1);
 
+            let s2 = [];
+
+            for (let i = 0; i < 10; i++) {
+                s2[i] = createSars(i * 0.3, 1, 1);
+                s2[i].setAttribute("random-color", "");
+
+                console.log(s2[i].attributes);
+            }
+
             function createSars(x, y, z, appendTo = scene) {
                 let sars = document.createElement("a-entity");
                 sars.setAttribute("obj-model", "obj", "#sars-obj" , "mtl", "#sars-mtl");
