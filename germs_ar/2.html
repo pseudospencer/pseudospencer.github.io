@@ -31,8 +31,7 @@
 
             function createSars(x, y, z, appendTo = scene) {
                 let sars = document.createElement("a-entity");
-                sars.setAttribute("obj-model", "obj", "#sars-obj");
-                sars.setAttribute("material", "mtl", "#sars-mtl");
+                sars.setAttribute("obj-model", "obj", "#sars-obj" , "mtl", "#sars-mtl");
                 sars.setAttribute("class", "sars bacteria");
                 sars.setAttribute("position", `${x} ${y} ${z}`);
                 sars.setAttribute("scale", ".001 .001 .001");
@@ -40,7 +39,6 @@
                 appendTo.appendChild(sars);
                 return sars;
             }
-
         </script>
 
     </body>
