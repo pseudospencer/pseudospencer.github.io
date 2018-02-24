@@ -21,8 +21,6 @@
             <a-box position="2 1 1" material="color:red;"></a-box>
             <!-- define camera that moves according to marker position -->
 
-
-
             <a-marker-camera preset="hiro"></a-marker-camera>
         </a-scene>
 
@@ -37,7 +35,7 @@
                 sars.setAttribute("material", "mtl", "#sars-mtl");
                 sars.setAttribute("class", "sars bacteria");
                 sars.setAttribute("position", `${x} ${y} ${z}`);
-                sars.setAttribute("scale", "1 1 1");
+                sars.setAttribute("scale", ".1 .1 .1");
 
                 appendTo.appendChild(sars);
                 return sars;
