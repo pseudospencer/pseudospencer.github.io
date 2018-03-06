@@ -11,6 +11,7 @@
         <!-- Custom Components -->
         <script src="components/random-color.js"></script>
         <script src="components/random-movement.js"></script>
+        <script src="components/random-rotation.js"></script>
     </head>
 
     <body style="margin: 0px; overflow: hidden;">
@@ -55,6 +56,10 @@
                 sarsArray[i].setAttribute("random-movement", "");
                 bacillusArray[i].setAttribute("random-movement", "");
                 erythrocyteArray[i].setAttribute("random-movement", "");
+                // Random spinning?
+                sarsArray[i].setAttribute("random-rotation", "");
+                bacillusArray[i].setAttribute("random-rotation", "");
+                erythrocyteArray[i].setAttribute("random-rotation", "");
             }
 
             function createSars(x, y, z, appendTo = scene) {
