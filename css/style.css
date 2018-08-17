@@ -132,7 +132,7 @@ footer {
     background: linear-gradient(180deg, rgba(65,244,166,1) 0%, rgba(0,137,177,1) 100%);
 }
 
-@keyframes wave {
+@keyframes wave-animation {
     50% {
         -ms-transform: rotate(-20deg); /* IE 9 */
         -webkit-transform: rotate(-20deg); /* Safari */
@@ -141,7 +141,8 @@ footer {
 }
 
 .hand {
-    animation-name: wave;
+    display: inline-block;
+    animation-name: wave-animation;
     animation-duration: 3s;
     animation-iteration-count: infinite;
 }
