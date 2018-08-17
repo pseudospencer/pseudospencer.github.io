@@ -2,5 +2,4 @@
 
 This page showcases some of my recent web development projects
 
-# 😎🏝
-## Stay cool
+# 😎🏝 Stay cool
