@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page -->
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>OP-1 Product Page</title>
+    <!-- <script type="text/javascript" src="https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js"></script> -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <img src="img/teenage_engineering_logo_300x150.png" id="header-img" class="logo" alt="Company Logo">
+        <nav id="nav-bar">
+            <a href="#overview" class="nav-link">overview</a>
+            <a href="#features" class="nav-link">features</a>
+            <a href="#specifications" class="nav-link">specs</a>
+            <a href="#purchase" class="nav-link">purchase</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>OP-1 Synthesizer</h1>
+            <img src="img/op1_xlarge.jpg" alt="OP-1 Synthesizer">
+            <div class="section-content">
+                <blockquote cite="https://twitter.com/elijahwood/status/157176260076912640?lang=en">
+                    Endless enjoyment out of this machine
+                    <br>
+                    -Elijah Wood
+                </blockquote>
+                <button class="call-to-action" type="button" name="button">purchase now for $799</button>
+            </div>
+        </section>
+        <section id="video">
+            <div class="section-content">
+                <div class="video-container">
+                    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/9Pm13Gk1jt4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        <section id="overview">
+            <div class="section-content">
+                <h2>Overview</h2>
+                <p>The award-winning OP-1 from Teenage Engineering is a synth like no other. With its futuristic design, the OP-1 takes on the role of synthesizer, sampler, and controller all-in-one highly stylized package. This synth is something to behold, but it sounds even better than it looks, with exciting features like the FM Radio and an assignable G-Force sensor for motion controlled effects. OP-1 also incorporates a built-in Tape feature that gives you the ability to record everything you do on up to four tracks, with overdubbing and reverse recording functions.</p>
+                <h3>Compact synthesizer, sampler, and controller in one</h3>
+                <p>From the classic 8-bit Dr Wave sound engine to the String physical modeling engine, the Teenage Engineering OP-1 gives you ten great ways to make cool and creative sounds. You also get two different styles of onboard samplers, including a synth sampler and a drum sampler for adding realistic instrument sounds to the mix. And when you hook the OP-1 up to your computer, you can instantly take control of your favorite virtual instruments, right from its extremely streamlined user interface.</p>
+                <h3>Record like a pro with the built-in 4-track virtual tape deck</h3>
+                <p>When you're ready to record, you'll find the Teenage Engineering OP-1's built-in 4-track "tape deck" to be more than inspiring. Combined with the onboard sequencer, you can create truly funky effects by varying the tape speed (or even reversing it) it real time. And when you add in the OP-1's 4-channel mixer with EQ and Drive controls, you'll be surprised by what you can accomplish.</p>
+            </div>
+        </section>
+        <img src="img/op1_display.jpg" alt="OP-1 Display">
+        <section id="features">
+            <div class="section-content">
+                <h2>Features</h2>
+                <h3>Drag and Drop</h3>
+                <p>When plugged to a Mac/PC using USB, the OP-1 shows up as a mass storage device. Ready for you to drag and drop audio files between your computer and the OP-1. The 4 tape tracks are available as well as sampled waveforms for you to manipulate. No additional software or drivers required. Just plug and play.</p>
+                <h3>Color-coded Interface</h3>
+                <p>The unique OP-1 color-coded interface with color graphics on the beautiful OLED display is direct related to the four-color rotary encoders and the legend on the keyboard. This makes for extremely easy reading and a non-technical way to control and shape your sounds. Finally, you don't have to be a scientist to use a synthesizer.</p>
+                <h3>16 Hour Battery</h3>
+                <p>Playing at maximum volume you can travel over the Atlantic Ocean twice, constantly making music on your OP-1 before it runs out of power. And at the same time have over 2 years of stand by time.</p>
+            </div>
+        </section>
+        <img src="img/op1_side_view.png" alt="OP-1 Side View">
+        <section id="specifications">
+            <div class="section-content">
+                <h2>Specifications</h2>
+                <div class="column-container">
+                    <div class="half-width-column">
+                        <h3>Sound Engines</h3>
+                        <ul>
+                            <li>Dr Wave - Raw 8-bit yupe sound engine</li>
+                            <li>FM - Easy to tweak FM synthesis engine</li>
+                            <li>Pulse - Square wave type engine</li>
+                            <li>String - Physical modeling with a twist</li>
+                            <li>Digital - Raw digital type of engine</li>
+                            <li>Phase - Phase distortion engine</li>
+                            <li>Cluster - Multiple Wave Cluster</li>
+                        </ul>
+                        <h3>Sample Engines</h3>
+                        <ul>
+                            <li>Dedicated instant Synth Sampler with 6 seconds sampling time for each slot</li>
+                            <li>Dedicated instant Drum Sampler with 12 seconds sampling time for each slot</li>
+                            <li>With automated layout feature</li>
+                            <li>Instant sampling with built-in Microphone or Line in</li>
+                        </ul>
+                        <h3>Envelopes</h3>
+                        <ul>
+                            <li>Classic ADSR type of envelope</li>
+                            <li>Dynamic Envelope for Drum sounds</li>
+                        </ul>
+                        <h3>Effects</h3>
+                        <ul>
+                            <li>Delay - Classic delay type</li>
+                            <li>Phone - Hacked phone effect</li>
+                            <li>Punch - Adds punch to your sound</li>
+                            <li>Grid - Grid based echo</li>
+                            <li>Spring - Spring reverb type</li>
+                        </ul>
+                        <h3>Tape Feature</h3>
+                        <ul>
+                            <li>4 individual tracks with instant Solo</li>
+                            <li>Instant variable Tape Speed</li>
+                            <li>6 minutes recording time in Normal tape speed</li>
+                            <li>Up to 24 minutes recording time in Low tape speed</li>
+                            <li>Loop function with movable region</li>
+                            <li>Tape tricks for Break Tape, Bits and Reverse</li>
+                            <li>Reverse Recording</li>
+                            <li>Classic Tape editing Features Lift / Split and Drop</li>
+                            <li>Lift tape recordings back into Sampler for endless sound design</li>
+                        </ul>
+                        <h3>Motion Sensor</h3>
+                        <ul>
+                            <li>3 Axis Motion sensor (G-Force)</li>
+                            <li>Assignable to any synth, envelope, effect parameter or to pitch</li>
+                        </ul>
+                        <h3>Built-in FM radio</h3>
+                        <ul>
+                            <li>Sample direct from any radiostation</li>
+                            <li>Record direct to tape</li>
+                        </ul>
+                    </div>
+                    <div class="half-width-column">
+                    <h3>CPU</h3>
+                    <ul>
+                        <li>400 MHz Processor Core</li>
+                        <li>(800 MMACSS performance)</li>
+                        <li>64 MB Low-Power SDRAM (12ns)</li>
+                        <li>512 MB Nand Flash storage</li>
+                        <li>24-bit 96kHz ADC/DAC</li>
+                    </ul>
+                    <h3>Battery</h3>
+                    <ul>
+                        <li>Li-Ion 1800 mAh</li>
+                        <li>16 hours active Battery Life</li>
+                        <li>Charge via USB port</li>
+                    </ul>
+                    <h3>I/O</h3>
+                    <ul>
+                        <li>USB 2.0 high speed (OTG)</li>
+                        <li>3.5 mm Line Input, Output</li>
+                        <li>Built-in microphone</li>
+                        <li>High output mini speaker 8 Ohm 1 Watt</li>
+                    </ul>
+                    <h3>Display</h3>
+                    <ul>
+                        <li>Amoled display running in 60 fps</li>
+                        <li>320 x 160 pixel resolution</li>
+                        <li>Color Depth: 16.7 M</li>
+                        <li>Contrast: 10000:1 (good for outdoor use!)</li>
+                        <li>Viewing Angle: 170</li>
+                    </ul>
+                    <h3>Mechanical</h3>
+                    <ul>
+                        <li>Low profile keyboard module</li>
+                        <li>Scissor-switch ultra low profile design</li>
+                    </ul>
+                    <h3>Encoders</h3>
+                    <ul>
+                        <li>Industrial Grade Incremental Encoders</li>
+                        <li>Excellent indexing feel (remains consistent over life)</li>
+                        <li>Zinc diecast and fiber enforced high performance plastic</li>
+                    </ul>
+                    <h3>Body</h3>
+                    <ul>
+                        <li>Advanced CNC:d one-piece Aluminum design.</li>
+                        <li>2 X M6 Mounting holes for accessories.</li>
+                        <li>2 X Cuts for strap accessory.</li>
+                        <li>Color</li>
+                        <li>Light grey powder coated body and EDM textured keyboard</li>
+                    </ul>
+                    <h3>Dimensions</h3>
+                    <ul>
+                        <li>L 282 mm, H 102 mm, D 13.5 mm</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </section>
+        <section id="purchase">
+            <div class="section-content">
+                <h2>the OP-1 Synth from Teenage Engineering</h2>
+                <img src="img/op1.png" alt="OP-1">
+                <button class="call-to-action" type="button" name="button">purchase now for $799</button>
+            </div>
+        </section>
+        <footer>
+            <nav id="footer-nav-bar">
+                <a href="#overview" class="nav-link">overview</a>
+                <a href="#features" class="nav-link">features</a>
+                <a href="#specifications" class="nav-link">specs</a>
+            </nav>
+            <p>Sign up for our newsletter to for updates on Teenage Engineering</p>
+            <form id="form" class="" action="https://www.freecodecamp.com/email-submit" method="post">
+                <input id="email" type="email" name="email" value="" placeholder="supercool@awesome.com"><br />
+                <input id="submit" type="submit" name="submit" value="susbscribe">
+            </form>
+        </footer>
+
+    </main>
+</body>
+</html>

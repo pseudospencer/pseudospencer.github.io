@@ -1,0 +1,121 @@
+html {
+    font-family: 'Josefin Slab', serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 'sidebar-left main sidebar-right';
+    grid-template-columns: 1fr minmax(300px, 600px) 1fr;
+}
+
+#title {
+    font-size: 48px;
+    text-align: center;
+    padding: 30px 30px 10px 30px;
+}
+
+#subtitle {
+    font-size: 28px;
+    font-style: italic;
+    font-weight: lighter;
+    text-align: center;
+    padding: 0px 10px 10px 10px;
+}
+
+#lifespan {
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    grid-area: main;
+}
+
+#tribute-info {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 10px;
+}
+
+#image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+}
+
+#img-caption {
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+}
+
+#sidebar-left {
+    grid-area: sidebar-left;
+}
+
+#sidebar-right {
+    grid-area: sidebar-right;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes wiggle-left{
+    50% {
+        -ms-transform: rotate(20deg); /* IE 9 */
+        -webkit-transform: rotate(20deg); /* Safari */
+        transform: rotate(20deg);
+    }
+}
+@keyframes wiggle-right{
+    50% {
+        -ms-transform: rotate(-20deg); /* IE 9 */
+        -webkit-transform: rotate(-20deg); /* Safari */
+        transform: rotate(-20deg);
+    }
+}
+
+.decoration {
+    width: 100%
+    height: auto;
+    max-width: 80px;
+    padding: 20px;
+}
+
+img.decoration.left{
+    /* margin-left: auto; */
+    animation-name: wiggle-left;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+img.decoration.right {
+    /* margin-right: auto; */
+    animation-name: wiggle-right;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@media (max-width:600px) {
+    .sidebar {
+        display: none`;
+    }
+    .decoration {
+        display: none;
+    }
+}
+
+@media (max-width:1000px) {
+    img.decoration.left {
+        margin-left: auto;
+    }
+    img.decoration.right {
+        margin-right: auto;
+    }
+}

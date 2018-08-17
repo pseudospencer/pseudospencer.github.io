@@ -1,0 +1,139 @@
+html,
+body {
+    background-image: url("backgroundPattern.jpg");
+    background-repeat: repeat;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    min-width: 320px;
+
+}
+
+#form-outer {
+    margin: 0 auto;
+    width: 75%;
+    max-width: 800px;
+    line-height: 20px;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #12caea;
+    border-radius: 4px;
+}
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+}
+
+#description {
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 28px;
+    font-style: italic;
+    margin-top: 40px;
+    text-align: center
+}
+
+/* _______________fieldset reset stuff______________ */
+legend {
+  padding: 0;
+  display: table;
+}
+fieldset {
+  border: 0;
+  padding: 0.01em 0 0 0;
+  margin: 0;
+  min-width: 0;
+}
+body:not(:-moz-handler-blocked) fieldset {
+  display: table-cell;
+}
+/* _______________end fieldset reset_______________ */
+
+.row {
+    margin: 5px;
+}
+
+.label {
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.input {
+    display: inline-block;
+    width: 50%;
+    padding: 5px;
+    text-align: left;
+    vertical-align: middle;
+    /* background: #b3ffa3; */
+}
+
+#submit {
+    height: 30px;
+    width: 100px;
+    background: #12caea;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 90%;
+    height: 30px;
+}
+
+textarea {
+    width: 90%;
+}
+
+#submit,
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    border: 1px solid #7c7c7c;
+    border-radius: 3px;
+}
+
+ul {
+    -webkit-margin-before:0em;
+    -webkit-margin-after:0em;
+}
+
+.radio,
+.checkbox {
+    position: relative;
+    left: -48px;
+    margin-left: 10px;
+    display: block;
+}
+
+.bottom {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+@media screen and (max-width: 495px) {
+    .label {
+        width: 100%;
+        text-align: left;
+        padding-left: 0;
+    }
+    .input {
+        width: 100%;
+        padding-left: 0;
+    }
+}
