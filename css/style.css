@@ -88,6 +88,15 @@ footer a {
     padding: 30px;
 }
 
+.hr {
+    width: 33%;
+    margin: 70px auto 30px auto;
+    height: 2px;
+    background: rgb(65,244,166);
+    background: linear-gradient(180deg, rgba(65,244,166,1) 0%, rgba(0,137,177,1) 100%);
+
+}
+
 .project-grid {
     display: flex;
     flex-direction: row;
