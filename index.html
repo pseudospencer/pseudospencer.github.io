@@ -24,6 +24,39 @@
         </div>
     </section>
     <section id="projects">
+        <section id="front-end-libraries-projects">
+            <h2>Front End Libraries Projects</h2>
+            <p>I built these projects while working towards the <a href="https://learn.freecodecamp.org/">Free Code Camp front-end libraries certification</a>. While many of these projects were part of the core curriculum, I completed a few independently in order to further hone my skills.</p>
+            <div class="project-grid">
+                <div class="project-tile">
+                    <div class="project-title">
+                        <h3><a href="/react-tic-tac-toe" target="_blank">React Tic Tac Toe</a></h3>
+                    </div>
+                    <div class="project-image">
+                        <a href="/react-tic-tac-toe" target="_blank"><img src="img/react-tic-tac-toe.png" alt="Tic Tac Toe app screenshot"></a>
+                    </div>
+                    <div class="project-description">
+                        <p>I built foundation for this project by following the <a href="https://reactjs.org/tutorial/tutorial.html">Intro to React Tutorial</a>. After learning how to set up Create React App and going through the tutorial, I expanded on the main tutorial with custom styling and a responsive layout, color coding the X's and O's, highlighting the winning line, highlighting the currently selected turn and displaying the coordinates + mark made for each turn in the history list, and enhancing the status to handle win, lose, and draw conditions.</p>
+                        <p>Although I'd completed the React and Redux lessons on FreeCodeCamp prior to this project, I'd consider this my first 'real' react app. This project a great learning experience for me because the app uses multi-level nested components and passes props all the way down from the top to bottom level. I had originally tried to track the winner and winning line in the Game component's state by using setState in Game.handleClick, but then I realized that doing so blocked the "rewind" functionality. Instead, I ended up just passing down the winning line from Game.update to Board and Square through props, exposing this data where it was needed and solving the problems I was facing with the rewind. Additonally, I had some trouble figuring out how to correctly import images using relative filepaths until I took a fifth look at <a href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-fonts-and-files">the docs</a>!</p>
+                        <p>I obviously still have a lot to learn about React, but here's to one completed project on the books! 🍾</p>
+                    </div>
+                </div>
+                <div class="project-tile">
+                    <div class="project-title">
+                        <h3><a href="/react-design-quotes" target="_blank">React Quotes on Design</a></h3>
+                    </div>
+                    <div class="project-image">
+                        <a href="/react-design-quotes" target="_blank"><img src="img/react-design-quotes.png" alt="Design Quotes app screenshot"></a>
+                    </div>
+                    <div class="project-description">
+                        <p>This is the the first full web app that I built in React entirely from scratch (with the exception of create-react-app of course). I wanted to take the lessons I'd learned from creating the Tic-Tac-Toe app, but this time structure the project in a more "React" style. My approach for this project was to start by building out the core functionality: since I knew my app needed to pull quote data from an API and enable users to tweet each quote, I split the UI component code into individual files, and housed most of the logic for the app in the top level QuoteMachine component. I have to say, although it was a bit confusing initially to work with so many files, after getting used to it I see now how it would make managing a large project easier.</p>
+                        <p>After building out the primary app logic and component structure, I put my design skills to use by creating a <a href="https://www.figma.com/file/JYulEuEfRsdTJj44iYMOM247/Random-Quote-Machine-Responsive-Design?node-id=0%3A1" target="_blank">style guide and mobile and desktop UI mockups in Figma</a>. Taking a step back to think about this project with a design mindset gave me the idea to expand on my app with a new feature: a quote history section that would display all the quotes the user had previously looked at, with the option to tweet each of those quotes as well. Designing out the UI was also a great time to think about the different app states and user interactions, and gave me the opportunity to predetermine the button and quote card hover behavior rather than making it up on the spot.</p>
+                        <p>With my mockups in hand, I built out the CSS styling... Which actually ended up being the most time-consuming part of the whole project! I relied heavily on flexbox to make the UI responsive. In the process of styling the page, I decided to deviate from my mockups by expanding the width of the main column while capping its maximum width at 1600px to keep the line length in a more optimal range. Having finished this app, I feel like I have a much better understanding of React component hierarchy, and state management. Although I went above and beyond the requirements, you can see the <a href="https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine" target="_blank">original project requirements here</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="hr"></div>
         <section id="responsive-web-projects">
             <h2>Responsive Web Development Projects</h2>
             <p>I completed tese projects as part of the <a href="https://learn.freecodecamp.org/">Free Code Camp Responsive Web Development curriculum</a>. I wrote the code for each page from scratch using HTML5 and CSS3.</p>
@@ -81,26 +114,6 @@
                     </div>
                     <div class="project-description">
                         <p>The final project for the Responsive Web Development certification was to create this portfolio page! I used flexbox, some sweet gradients, and everything I'd practiced up to this point to get it done. Honestly, this was probably the most fun of the five because it was completely up to me! <a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage" target="_blank">Project requirements here</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="hr"></div>
-        <section id="front-end-libraries-projects">
-            <h2>Front End Libraries Projects</h2>
-            <p>I built these projects while working towards the <a href="https://learn.freecodecamp.org/">Free Code Camp front-end libraries certification</a>. While many of these projects were part of the core curriculum, I completed a few independently in order to further hone my skills.</p>
-            <div class="project-grid">
-                <div class="project-tile">
-                    <div class="project-title">
-                        <h3><a href="/react-tic-tac-toe" target="_blank">React Tic Tac Toe</a></h3>
-                    </div>
-                    <div class="project-image">
-                        <a href="/react-tic-tac-toe" target="_blank"><img src="img/react-tic-tac-toe.png" alt="Tic Tac Toe app screenshot"></a>
-                    </div>
-                    <div class="project-description">
-                        <p>I built foundation for this project by following the <a href="https://reactjs.org/tutorial/tutorial.html">Intro to React Tutorial</a>. After learning how to set up Create React App and going through the tutorial, I expanded on the main tutorial with custom styling and a responsive layout, color coding the X's and O's, highlighting the winning line, highlighting the currently selected turn and displaying the coordinates + mark made for each turn in the history list, and enhancing the status to handle win, lose, and draw conditions.</p>
-                        <p>Although I'd completed the React and Redux lessons on FreeCodeCamp prior to this project, I'd consider this my first 'real' react app. This project a great learning experience for me because the app uses multi-level nested components and passes props all the way down from the top to bottom level. I had originally tried to track the winner and winning line in the Game component's state by using setState in Game.handleClick, but then I realized that doing so blocked the "rewind" functionality. Instead, I ended up just passing down the winning line from Game.update to Board and Square through props, exposing this data where it was needed and solving the problems I was facing with the rewind. Additonally, I had some trouble figuring out how to correctly import images using relative filepaths until I took a fifth look at <a href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-fonts-and-files">the docs</a>!</p>
-                        <p>I obviously still have a lot to learn about React, but here's to one completed project on the books! 🍾</p>
                     </div>
                 </div>
             </div>
